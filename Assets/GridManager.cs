@@ -69,6 +69,16 @@ public class GridManager : MonoBehaviour
     public void ResetGrid()
     {
         occupied = new bool[width, height];
+        
+        // Сбрасываем ссылки на корабли в ячейках
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                Cell cell = gridArray[x, y].GetComponent<Cell>();
+                cell.ship = null;
+            }
+        }
     }
     
     // Получаем мировые координаты ячейки на основе ее позиции на сетке

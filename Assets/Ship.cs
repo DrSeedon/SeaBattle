@@ -12,6 +12,20 @@ public class Ship : MonoBehaviour
     private int x; // координата x корабля на сетке
     private int y; // координата y корабля на сетке
 
+
+    public int health; // здоровье корабля
+
+    
+    public void TakeDamage()
+    {
+        health--;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // устанавливаем корабль на случайной свободной позиции на сетке
     public bool SetRandomPosition()
     {
@@ -101,6 +115,8 @@ public class Ship : MonoBehaviour
     // размещаем корабль на сетке
     private void PlaceShipOnGrid(int startX, int startY)
     {
+        health = size; // здоровье корабля равно его размеру
+        
         for (int i = 0; i < size; i++)
         {
             int offsetX = isVertical ? 0 : i;
@@ -109,6 +125,10 @@ public class Ship : MonoBehaviour
             Vector2Int position = new Vector2Int(startX + offsetX, startY + offsetY);
             occupiedPositions.Add(position);
             grid.OccupyPosition(position.x, position.y, true);
+            
+            // Добавляем ссылку на корабль в каждую ячейку
+            Cell cell = grid.gridArray[position.x, position.y].GetComponent<Cell>();
+            cell.ship = this;
         }
 
         // устанавливаем позицию и поворот корабля в соответствии с размещением на сетке
