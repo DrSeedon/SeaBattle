@@ -8,9 +8,9 @@ public class Ship : MonoBehaviour
     public GridManager grid; // ссылка на объект сетки игрового поля
     List<Vector2Int> occupiedPositions;
 
-    private bool isVertical; // корабль расположен вертикально или горизонтально?
-    private int x; // координата x корабля на сетке
-    private int y; // координата y корабля на сетке
+    public bool isVertical; // корабль расположен вертикально или горизонтально?
+    public int x; // координата x корабля на сетке
+    public int y; // координата y корабля на сетке
 
 
     public int health; // здоровье корабля
@@ -81,7 +81,7 @@ public class Ship : MonoBehaviour
         }
     }
     
-    private bool CheckIfValidPosition(int startX, int startY)
+    public bool CheckIfValidPosition(int startX, int startY)
     {
         List<Vector2Int> positionsToCheck = GetOccupiedPositionsToCheck(startX, startY);
 
@@ -113,7 +113,7 @@ public class Ship : MonoBehaviour
     }
     
     // размещаем корабль на сетке
-    private void PlaceShipOnGrid(int startX, int startY)
+    public void PlaceShipOnGrid(int startX, int startY)
     {
         health = size; // здоровье корабля равно его размеру
         

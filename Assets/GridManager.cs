@@ -1,3 +1,5 @@
+using System.Collections;
+using EasyButtons;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -80,13 +82,21 @@ public class GridManager : MonoBehaviour
             }
         }
     }
-    
-    // Получаем мировые координаты ячейки на основе ее позиции на сетке
-    public Vector3 GetWorldPosition(int x, int y)
-    {
-        float xOffset = (width * cellSize) / 2f;
-        float yOffset = (height * cellSize) / 2f;
 
-        return new Vector3(x * cellSize - xOffset, y * cellSize - yOffset, 0f);
+    // Получаем мировые координаты ячейки на основе ее позиции на сетке
+    public Vector3 GetWorldPosition(int x, int z)
+    {
+        return new Vector3(x * cellSize, 0f, z * cellSize);
     }
+
+    public Vector3Int GetNearestGridPosition(Vector3 worldPosition)
+    {
+        Vector3 localPosition = transform.InverseTransformPoint(worldPosition);
+        int x = Mathf.RoundToInt(localPosition.x / cellSize);
+        int y = Mathf.RoundToInt(localPosition.z / cellSize);
+        x = Mathf.Clamp(x, 0, width - 1);
+        y = Mathf.Clamp(y, 0, height - 1);
+        return new Vector3Int(x, 0, y);
+    }
+
 }

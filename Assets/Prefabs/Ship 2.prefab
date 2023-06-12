@@ -47,6 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 2
   grid: {fileID: 0}
+  isVertical: 0
+  x: 0
+  y: 0
+  health: 0
 --- !u!1 &6452293636163250720
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +63,7 @@ GameObject:
   - component: {fileID: 8132114798884149740}
   - component: {fileID: 4513489822651930185}
   - component: {fileID: 1049502444241091369}
+  - component: {fileID: 3582680087874140259}
   m_Layer: 0
   m_Name: ShipModel
   m_TagString: Untagged
@@ -152,3 +157,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3582680087874140259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452293636163250720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38e9b7bf60f1e946b21ea0f738d8c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  ship: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  renderers: []
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isDragging: 0
