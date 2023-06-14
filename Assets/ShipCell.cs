@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using Vertx.Debugging;
 
 public class ShipCell : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Ship ship; // ссылка на родительский корабль
+    public ShipMovement shipMovement; // ссылка на родительский корабль
+    
+    private void OnMouseDown()
     {
-        
+        shipMovement.OnMouseDown();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void OnMouseUp()
     {
-        
+        shipMovement.OnMouseUp();
     }
 }

@@ -45,10 +45,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\AICommandSettings.cs" />
-     <Compile Include="Assets\Editor\OpenAIUtil.cs" />
      <Compile Include="Assets\Editor\OpenAI.cs" />
      <Compile Include="Assets\Editor\AICommandWindow.cs" />
+     <Compile Include="Assets\Editor\AICommandSettings.cs" />
+     <Compile Include="Assets\Editor\OpenAIUtil.cs" />
      <Folder Include="Assets\Editor" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -307,6 +307,24 @@
      </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="ReportGeneratorMerged">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.testtools.codecoverage@1.2.3\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="log4netPlastic">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Newtonsoft.Json">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Antlr3.Runtime">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="unityplastic">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -686,8 +704,74 @@
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEditor.TestRunner">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TestRunner">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+     </Reference>
+     <Reference Include="Vertx.Debugging.Runtime">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Vertx.Debugging.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.EditorCoroutines.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualStudio.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Rider.Editor">
      <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -703,13 +787,13 @@
       <Project>{bc5764ec-8dd9-a5fc-e8d0-4c15b02ac7bd}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="EasyButtons.csproj">
-      <Project>{4ac9f7d7-ccc1-6251-b846-9b56c06b77fe}</Project>
-      <Name>EasyButtons</Name>
-    </ProjectReference>
     <ProjectReference Include="EasyButtons.Editor.csproj">
       <Project>{c28571bb-d736-4f55-5604-4d48622c91b4}</Project>
       <Name>EasyButtons.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="EasyButtons.csproj">
+      <Project>{4ac9f7d7-ccc1-6251-b846-9b56c06b77fe}</Project>
+      <Name>EasyButtons</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

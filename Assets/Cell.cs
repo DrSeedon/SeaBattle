@@ -1,18 +1,33 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    public Material defaultMaterial;
-    public Material alternateMaterial;
-    private Renderer rend;
-    public Ship ship; // ссылка на корабль, находящийся в ячейке
-    private bool isHit = false; // флаг, указывающий, была ли ячейка подвергнута попаданию
+    
+    public Material materialDefault;
+    public Material materialAlt;
+    
+    public Renderer rend;
 
-    public bool IsHit()
+    // Ссылка на корабль, находящийся в ячейке
+    public Ship ship; 
+    public ShipCell shipCell;
+    
+    // Флаг, указывающий, была ли ячейка подвергнута попаданию
+    public bool isHit = false; 
+    public bool isOccupied = false; 
+
+    void Start()
     {
-        return isHit;
+        rend = GetComponent<Renderer>();
+    }
+
+    public void Occupied(bool value)
+    {
+        isOccupied = value;
+        rend.material = isOccupied ? materialAlt : materialDefault;
+        Debug.Log(name + " " + value);
     }
 
     public void TakeHit()
@@ -21,17 +36,11 @@ public class Cell : MonoBehaviour
             return;
 
         isHit = true;
-
+        
         if (ship != null)
         {
-            ship.TakeDamage();
+            //ship.TakeDamage();
         }
-    }
-
-    void Start()
-    {
-        rend = GetComponent<Renderer>();
-        rend.material = defaultMaterial;
     }
 
     void OnMouseDown()
@@ -40,10 +49,6 @@ public class Cell : MonoBehaviour
             return;
 
         TakeHit();
-
-        
-        rend.material = alternateMaterial;
-
         Debug.Log("Вы кликнули на " + gameObject.name);
     }
 }

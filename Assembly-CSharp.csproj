@@ -45,17 +45,51 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Ship.cs" />
-     <Compile Include="Assets\ShipMovement.cs" />
+     <Compile Include="Assets\LogHelper.cs" />
      <Compile Include="Assets\GridManager.cs" />
+     <Compile Include="Assets\ShipMovement.cs" />
      <Compile Include="Assets\GameplayManager.cs" />
+     <Compile Include="Assets\Ship.cs" />
      <Compile Include="Assets\ShipCell.cs" />
-     <Compile Include="Assets\Cell.cs" />
+     <Compile Include="Assets\StaticInstance.cs" />
      <Compile Include="Assets\ShipSpawner.cs" />
+     <Compile Include="Assets\Cell.cs" />
      <Folder Include="Assets" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <Folder Include="Assets\TextMesh Pro\Sprites" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\TextMesh Pro" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
+     <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\Prefabs" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Material" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Scenes" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+     <Folder Include="Assets\Prefabs\Ship" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -64,6 +98,12 @@
      </Reference>
      <Reference Include="UnityEngine.AccessibilityModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AnimationModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AudioModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.ClusterInputModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
@@ -83,6 +123,9 @@
      <Reference Include="UnityEngine.DSPGraphModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEngine.DirectorModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.GIModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
      </Reference>
@@ -95,14 +138,23 @@
      <Reference Include="UnityEngine.HotReloadModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEngine.IMGUIModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.InputModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.InputLegacyModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEngine.JSONSerializeModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.LocalizationModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ParticleSystemModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.PerformanceReportingModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
@@ -145,6 +197,9 @@
      </Reference>
      <Reference Include="UnityEngine.TextRenderingModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UIModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
@@ -211,6 +266,12 @@
      </Reference>
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="ReportGeneratorMerged">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.testtools.codecoverage@1.2.3\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -578,8 +639,68 @@
      <Reference Include="System.Xml.Serialization">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
+     <Reference Include="Vertx.Debugging.Runtime">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Vertx.Debugging.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.EditorCoroutines.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualStudio.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Rider.Editor">
      <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -587,13 +708,13 @@
       <Project>{6c579cbb-8d98-0ffe-1fda-413d2da2b179}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="EasyButtons.csproj">
-      <Project>{4ac9f7d7-ccc1-6251-b846-9b56c06b77fe}</Project>
-      <Name>EasyButtons</Name>
-    </ProjectReference>
     <ProjectReference Include="EasyButtons.Editor.csproj">
       <Project>{c28571bb-d736-4f55-5604-4d48622c91b4}</Project>
       <Name>EasyButtons.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="EasyButtons.csproj">
+      <Project>{4ac9f7d7-ccc1-6251-b846-9b56c06b77fe}</Project>
+      <Name>EasyButtons</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

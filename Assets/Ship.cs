@@ -1,19 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using EasyButtons;
 using UnityEngine;
+using Vertx.Debugging;
 
 public class Ship : MonoBehaviour
 {
-    public int size; // размер корабля
-    public GridManager grid; // ссылка на объект сетки игрового поля
-    List<Vector2Int> occupiedPositions;
 
+    [Header("Обязательное заполнение")] 
+    
+    public List<ShipCell> shipCells = new List<ShipCell>();
+
+    [Header("Внутренние переменные")]
+    public int size; // размер корабля
+    public List<Vector2Int> occupiedPositions;
     public bool isVertical; // корабль расположен вертикально или горизонтально?
     public int x; // координата x корабля на сетке
     public int y; // координата y корабля на сетке
-
-
     public int health; // здоровье корабля
+
+
+    [Header("Автоматическое заполнение")]
+    public GridManager grid; // ссылка на объект сетки игрового поля
+    public ShipMovement shipMovement;
+
+    [Button]
+    public void GatherShipCells() {
+        shipCells = new List<ShipCell>(GetComponentsInChildren<ShipCell>());
+    }
+
+    #region PublicMethod
 
     
     public void TakeDamage()
@@ -53,9 +69,14 @@ public class Ship : MonoBehaviour
 
         return false;
     }
+
+
+    #endregion
     
+    #region PrivateMethod
+
     
-// Получаем список всех доступных позиций на сетке
+    // Получаем список всех доступных позиций на сетке
     private List<Vector2Int> GetAllAvailablePositions()
     {
         List<Vector2Int> availablePositions = new List<Vector2Int>();
@@ -80,8 +101,8 @@ public class Ship : MonoBehaviour
             (list[i], list[randomIndex]) = (list[randomIndex], list[i]);
         }
     }
-    
-    public bool CheckIfValidPosition(int startX, int startY)
+
+    private bool CheckIfValidPosition(int startX, int startY)
     {
         List<Vector2Int> positionsToCheck = GetOccupiedPositionsToCheck(startX, startY);
 
@@ -112,10 +133,10 @@ public class Ship : MonoBehaviour
         return positions;
     }
     
-    // размещаем корабль на сетке
-    public void PlaceShipOnGrid(int startX, int startY)
+    private void PlaceShipOnGrid(int startX, int startY)
     {
         health = size; // здоровье корабля равно его размеру
+        shipMovement = GetComponent<ShipMovement>();
         
         for (int i = 0; i < size; i++)
         {
@@ -126,13 +147,24 @@ public class Ship : MonoBehaviour
             occupiedPositions.Add(position);
             grid.OccupyPosition(position.x, position.y, true);
             
+            // Обновляем ссылку на Cell в соответствующей ShipCell
+            ShipCell shipCell = shipCells[i];
+            shipCell.ship = this;
+            shipCell.shipMovement = shipMovement;
+
             // Добавляем ссылку на корабль в каждую ячейку
             Cell cell = grid.gridArray[position.x, position.y].GetComponent<Cell>();
             cell.ship = this;
+            cell.shipCell = shipCell;
         }
 
         // устанавливаем позицию и поворот корабля в соответствии с размещением на сетке
         transform.position = new Vector3(startX * grid.cellSize, 0, startY * grid.cellSize);
         transform.rotation = Quaternion.Euler(0, isVertical ? 0 : 90, 0);
     }
+
+
+
+    #endregion
+    
 }

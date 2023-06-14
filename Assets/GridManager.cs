@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using EasyButtons;
 using UnityEngine;
@@ -8,22 +9,22 @@ public class GridManager : MonoBehaviour
     public int height = 10; // высота сетки
     public float cellSize = 1.0f; // размер клетки
 
-    public GameObject cellPrefab;
+    public Cell cellPrefab;
 
-    public GameObject[,] gridArray; // двумерный массив, представляющий сетку
+    public Cell[,] gridArray; // двумерный массив, представляющий сетку
     public bool[,] occupied; // массив, представляющий занятые позиции на сетке
 
     // создаем сетку игрового поля
     public void CreateGrid()
     {
-        gridArray = new GameObject[width, height];
+        gridArray = new Cell[width, height];
         occupied = new bool[width, height];
 
         // заполняем сетку пустыми объектами, которые будут отображаться в виде клеток поля
         for (var x = 0; x < width; x++)
         for (var y = 0; y < height; y++)
         {
-            var cell = Instantiate(cellPrefab, transform);
+            Cell cell = Instantiate(cellPrefab, transform);
             cell.name = "Cell [" + x + "," + y + "]";
             cell.transform.localPosition = new Vector3(x * cellSize, 0, y * cellSize);
             gridArray[x, y] = cell;
@@ -63,8 +64,8 @@ public class GridManager : MonoBehaviour
         {
             return;
         }
-
         occupied[x, y] = isOccupied;
+        gridArray[x, y].Occupied(isOccupied);
     }
     
     // очищаем занятые позиции на сетке

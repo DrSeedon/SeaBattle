@@ -45,18 +45,18 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils\EnumExtensions.cs" />
      <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils\StringExtensions.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ObjectEditor.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ButtonsDrawer.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ButtonWithoutParams.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\NonSerializedError.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils\EnumExtensions.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ButtonWithParams.cs" />
      <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils\DrawUtility.cs" />
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils\ScriptableObjectCache.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Button.cs" />
      <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\NoScriptFieldEditor.cs" />
      <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils\TypeExtensions.cs" />
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ButtonWithParams.cs" />
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ButtonsDrawer.cs" />
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\NonSerializedError.cs" />
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ObjectEditor.cs" />
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\ButtonWithoutParams.cs" />
-     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Button.cs" />
+     <Compile Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils\ScriptableObjectCache.cs" />
      <None Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\EasyButtons.Editor.asmdef" />
      <Folder Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor\Utils" />
      <Folder Include="Assets\Plugins\EasyButtons-1.3.0\Assets\EasyButtons\Editor" />
@@ -317,6 +317,24 @@
      </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="ReportGeneratorMerged">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.testtools.codecoverage@1.2.3\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="log4netPlastic">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Newtonsoft.Json">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Antlr3.Runtime">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="unityplastic">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -695,6 +713,18 @@
      </Reference>
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.TestRunner">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TestRunner">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

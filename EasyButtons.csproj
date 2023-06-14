@@ -57,6 +57,12 @@
      <Reference Include="UnityEngine.AccessibilityModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEngine.AnimationModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AudioModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.ClusterInputModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
      </Reference>
@@ -75,6 +81,9 @@
      <Reference Include="UnityEngine.DSPGraphModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEngine.DirectorModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.GIModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
      </Reference>
@@ -87,14 +96,23 @@
      <Reference Include="UnityEngine.HotReloadModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEngine.IMGUIModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.InputModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.InputLegacyModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEngine.JSONSerializeModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.LocalizationModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ParticleSystemModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.PerformanceReportingModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
@@ -137,6 +155,9 @@
      </Reference>
      <Reference Include="UnityEngine.TextRenderingModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UIModule">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
@@ -209,6 +230,24 @@
      </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="ReportGeneratorMerged">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.testtools.codecoverage@1.2.3\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="log4netPlastic">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Newtonsoft.Json">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Antlr3.Runtime">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="unityplastic">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>K:\GitHub\SeaBattle\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -576,6 +615,14 @@
      <Reference Include="System.Xml.Serialization">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.2.18f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>K:\GitHub\SeaBattle\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
