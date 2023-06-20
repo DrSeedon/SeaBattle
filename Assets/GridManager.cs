@@ -79,7 +79,7 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 Cell cell = gridArray[x, y].GetComponent<Cell>();
-                cell.ship = null;
+                cell.ship.Clear();
             }
         }
     }
@@ -99,5 +99,14 @@ public class GridManager : MonoBehaviour
         y = Mathf.Clamp(y, 0, height - 1);
         return new Vector3Int(x, 0, y);
     }
+    
+    public Vector3Int GetUnboundedGridPosition(Vector3 worldPosition)
+    {
+        Vector3 localPosition = transform.InverseTransformPoint(worldPosition);
+        int x = Mathf.RoundToInt(localPosition.x / cellSize);
+        int y = Mathf.RoundToInt(localPosition.z / cellSize);
+        return new Vector3Int(x, 0, y);
+    }
+
 
 }

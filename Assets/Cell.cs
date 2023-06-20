@@ -11,7 +11,7 @@ public class Cell : MonoBehaviour
     public Renderer rend;
 
     // Ссылка на корабль, находящийся в ячейке
-    public Ship ship; 
+    public List<Ship> ship; 
     public ShipCell shipCell;
     
     // Флаг, указывающий, была ли ячейка подвергнута попаданию

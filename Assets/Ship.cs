@@ -102,7 +102,7 @@ public class Ship : MonoBehaviour
         }
     }
 
-    private bool CheckIfValidPosition(int startX, int startY)
+    public bool CheckIfValidPosition(int startX, int startY)
     {
         List<Vector2Int> positionsToCheck = GetOccupiedPositionsToCheck(startX, startY);
 
@@ -154,7 +154,7 @@ public class Ship : MonoBehaviour
 
             // Добавляем ссылку на корабль в каждую ячейку
             Cell cell = grid.gridArray[position.x, position.y].GetComponent<Cell>();
-            cell.ship = this;
+            cell.ship.Add(this);
             cell.shipCell = shipCell;
         }
 

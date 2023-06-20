@@ -722,8 +722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcb2752e35f93f42b4209f11ada8cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 5
-  height: 5
+  width: 9
+  height: 9
   cellSize: 1
   cellPrefab: {fileID: 4472345080812508054, guid: 5657d63ba6b3c074896cc2c54bd82f40, type: 3}
 --- !u!4 &1481171809
@@ -833,8 +833,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1481171808}
   shipsContainer:
-  - count: 1
+  - count: 2
     shipPrefab: {fileID: 7506491581166163966, guid: 51bf7a7aae4b3d845ba5c45d565f775a, type: 3}
+  - count: 2
+    shipPrefab: {fileID: 5376132732928698715, guid: 9cac7d1fda031964c806ea544d17e731, type: 3}
+  - count: 3
+    shipPrefab: {fileID: 1362192085733427647, guid: 114b4e4f3bda9fc408f0cd82f0f6efe6, type: 3}
   ships: []
   maxPlacementAttempts: 100
   delay: 0

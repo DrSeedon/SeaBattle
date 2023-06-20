@@ -5,7 +5,7 @@ using EasyButtons;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class ShipSpawner : MonoBehaviour
+public class ShipSpawner : StaticInstance<ShipSpawner>
 {
     public GridManager grid; // ссылка на объект сетки игрового поля
     public List<ShipsContainer> shipsContainer;
@@ -19,6 +19,30 @@ public class ShipSpawner : MonoBehaviour
     {
         public int count;
         public Ship shipPrefab;
+    }
+
+    public void CheckShipsValid()
+    {
+        foreach (Ship ship in ships)
+        {
+            // Clear previous occupied positions
+            foreach (Vector2Int position in ship.occupiedPositions)
+                grid.OccupyPosition(position.x, position.y, false);
+
+            foreach (ShipCell cell in ship.shipCells) 
+                cell.SetMaterial(ship.CheckIfValidPosition(ship.x, ship.y));
+
+            // Set new occupied positions
+            ship.occupiedPositions.Clear();
+            for (var i = 0; i < ship.size; i++)
+            {
+                var offsetX = ship.isVertical ? 0 : i;
+                var offsetY = ship.isVertical ? i : 0;
+                Vector2Int position = new(ship.x + offsetX, ship.y + offsetY);
+                ship.occupiedPositions.Add(position);
+                grid.OccupyPosition(position.x, position.y, true);
+            }
+        }
     }
 
     [Button]
