@@ -47,13 +47,15 @@
   <ItemGroup>
      <Compile Include="Assets\LogHelper.cs" />
      <Compile Include="Assets\GridManager.cs" />
+     <Compile Include="Assets\SmartBot.cs" />
      <Compile Include="Assets\ShipMovement.cs" />
-     <Compile Include="Assets\GameplayManager.cs" />
+     <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Ship.cs" />
      <Compile Include="Assets\ShipCell.cs" />
      <Compile Include="Assets\StaticInstance.cs" />
      <Compile Include="Assets\ShipSpawner.cs" />
      <Compile Include="Assets\Cell.cs" />
+     <Compile Include="Assets\BoardManager.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

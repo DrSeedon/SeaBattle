@@ -15,6 +15,8 @@ public class ShipMovement : MonoBehaviour
 
     public bool isPlacementValid = true;
 
+    public bool isCanMove = true;
+
     private Vector3 initialMousePosition; // Начальная позиция мыши при клике
 
     private void Start()
@@ -29,6 +31,8 @@ public class ShipMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!isCanMove)return;
+
         if (isDragging)
         {
             // Обновляем позицию объекта в соответствии с позицией указателя мыши
@@ -40,6 +44,7 @@ public class ShipMovement : MonoBehaviour
 
     public void OnMouseDown()
     {
+        if (!isCanMove)return;
         // Запоминаем смещение между позицией объекта и позицией указателя мыши
         offset = ship.transform.position - GetMouseWorldPosition();
         initialMousePosition = Input.mousePosition;
@@ -48,6 +53,7 @@ public class ShipMovement : MonoBehaviour
 
     public void OnMouseUp()
     {
+        if (!isCanMove)return;
         if (!isDragging) return;
 
         isDragging = false;
@@ -110,14 +116,14 @@ public class ShipMovement : MonoBehaviour
         // Set the ship's position to the corrected grid position
         ship.transform.position = gridManager.GetWorldPosition(snappedGridPosition.x, snappedGridPosition.z);
 
+        // Clear previous occupied positions
+        foreach (Vector2Int position in ship.occupiedPositions)
+            gridManager.AddShipFromCell(ship, position.x, position.y, false);
+
         // Update ship's grid coordinates
         ship.x = snappedGridPosition.x;
         ship.y = snappedGridPosition.z;
         
-        // Clear previous occupied positions
-        foreach (Vector2Int position in ship.occupiedPositions)
-            gridManager.OccupyPosition(position.x, position.y, false);
-
         // Set new occupied positions
         ship.occupiedPositions.Clear();
         for (var i = 0; i < ship.size; i++)
@@ -126,10 +132,10 @@ public class ShipMovement : MonoBehaviour
             var offsetY = ship.isVertical ? i : 0;
             Vector2Int position = new(ship.x + offsetX, ship.y + offsetY);
             ship.occupiedPositions.Add(position);
-            gridManager.OccupyPosition(position.x, position.y, true);
+            gridManager.AddShipFromCell(ship, position.x, position.y, true);
         }
         
-        ShipSpawner.Instance.CheckShipsValid();
+        ship.shipSpawner.CheckShipsValid();
     }
 
     private Vector3 GetMouseWorldPosition()

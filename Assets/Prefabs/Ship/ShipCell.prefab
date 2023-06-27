@@ -29,11 +29,11 @@ Transform:
   m_GameObject: {fileID: 1379100363488737145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90000004, y: 0.90000004, z: 0.90000004}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5573469196623507709
 MeshFilter:
@@ -122,4 +122,4 @@ MonoBehaviour:
   shipMovement: {fileID: 0}
   materialDefault: {fileID: 2100000, guid: 2a58d44eb3e8dfa419a7eaf4c1484fb4, type: 2}
   materialAlt: {fileID: 2100000, guid: c467126d47057a142b7f23e38da74600, type: 2}
-  rend: {fileID: 0}
+  rend: {fileID: 5460263337624473208}

@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EasyButtons;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class ShipSpawner : StaticInstance<ShipSpawner>
+public class ShipSpawner : MonoBehaviour
 {
     public GridManager grid; // ссылка на объект сетки игрового поля
     public List<ShipsContainer> shipsContainer;
@@ -27,7 +28,7 @@ public class ShipSpawner : StaticInstance<ShipSpawner>
         {
             // Clear previous occupied positions
             foreach (Vector2Int position in ship.occupiedPositions)
-                grid.OccupyPosition(position.x, position.y, false);
+                grid.AddShipFromCell(ship, position.x, position.y, false);
 
             foreach (ShipCell cell in ship.shipCells) 
                 cell.SetMaterial(ship.CheckIfValidPosition(ship.x, ship.y));
@@ -40,19 +41,19 @@ public class ShipSpawner : StaticInstance<ShipSpawner>
                 var offsetY = ship.isVertical ? i : 0;
                 Vector2Int position = new(ship.x + offsetX, ship.y + offsetY);
                 ship.occupiedPositions.Add(position);
-                grid.OccupyPosition(position.x, position.y, true);
+                grid.AddShipFromCell(ship, position.x, position.y, true);
             }
         }
     }
 
     [Button]
-    public void SpawnShips()
+    public async Task SpawnShips()
     {
-        StartCoroutine(SpawnShipsCoroutine());
+        await SpawnShipsCoroutine();
     }
-    
+
     // Создаем корабли на сцене с задержкой
-    public IEnumerator SpawnShipsCoroutine()
+    public async Task SpawnShipsCoroutine()
     {
         bool allShipsPlaced = false;
         int tryCount = 0;
@@ -60,7 +61,7 @@ public class ShipSpawner : StaticInstance<ShipSpawner>
         while (!allShipsPlaced)
         {
             tryCount++;
-            
+
             ClearGrid(); // очищаем поле
 
             allShipsPlaced = true; // Предполагаем, что все корабли будут успешно размещены
@@ -72,6 +73,7 @@ public class ShipSpawner : StaticInstance<ShipSpawner>
                     var ship = Instantiate(shipContainer.shipPrefab, transform);
                     ship.name = "Ship " + i + " size: " + ship.size;
                     ship.grid = grid;
+                    ship.shipSpawner = this;
 
                     bool positionFound = ship.SetRandomPosition();
 
@@ -87,7 +89,8 @@ public class ShipSpawner : StaticInstance<ShipSpawner>
                         break; // Прерываем цикл для данного типа корабля и переходим к следующему типу
                     }
 
-                    yield return new WaitForSeconds(delay); // Задержка в пол секунды между размещениями кораблей
+                    // Задержка в полсекунды между размещениями кораблей
+                    await Task.Delay((int)(delay * 1000));
                 }
 
                 if (!allShipsPlaced)
@@ -113,14 +116,7 @@ public class ShipSpawner : StaticInstance<ShipSpawner>
         {
             Destroy(ship.gameObject);
         }
-        this.ships.Clear();
-        
-        // удаляем все корабли на сцене
-        Ship[] ships = FindObjectsOfType<Ship>();
-        foreach (Ship ship in ships)
-        {
-            Destroy(ship.gameObject);
-        }
+        ships.Clear();
         
         // очищаем занятые позиции на сетке
         grid.ResetGrid();

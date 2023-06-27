@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5017131199652491325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.26228714, y: -0.8571501, z: 3.8598049}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,10 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04d2ce1dd2e2c24e936163d6d036d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialDefault: {fileID: 2100000, guid: 31234b3ff963801478c51bd0b392891f, type: 2}
-  materialAlt: {fileID: 2100000, guid: 3caf58cda4cc5ac4a8779dec7f452fe9, type: 2}
+  materialEmpty: {fileID: 2100000, guid: 31234b3ff963801478c51bd0b392891f, type: 2}
+  materialMiss: {fileID: 2100000, guid: 3caf58cda4cc5ac4a8779dec7f452fe9, type: 2}
+  materialShip: {fileID: 2100000, guid: f821ab9ff69046a43be25ee0dccf410c, type: 2}
+  materialDestroyed: {fileID: 2100000, guid: 77e701101c40d7b41bfb216faf288ede, type: 2}
   rend: {fileID: 5017131199652491327}
-  ship: {fileID: 0}
+  ships: []
   shipCell: {fileID: 0}
+  isActive: 0
   isHit: 0
-  isOccupied: 0

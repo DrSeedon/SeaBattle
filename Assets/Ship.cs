@@ -22,6 +22,7 @@ public class Ship : MonoBehaviour
 
     [Header("Автоматическое заполнение")]
     public GridManager grid; // ссылка на объект сетки игрового поля
+    public ShipSpawner shipSpawner; // ссылка на объект сетки игрового поля
     public ShipMovement shipMovement;
 
     [Button]
@@ -32,14 +33,32 @@ public class Ship : MonoBehaviour
     #region PublicMethod
 
     
-    public void TakeDamage()
+    public bool TakeDamage()
     {
         health--;
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            for (var i = 0; i < size; i++)
+            {
+                var offsetX = isVertical ? 0 : i;
+                var offsetY = isVertical ? i : 0;
+                Vector2Int position = new(x + offsetX, y + offsetY);
+                Cell cell = grid.gridArray[position.x, position.y];
+                cell.ChangeMaterial(cell.materialDestroyed);
+            }
+
+            // Делаем корабль невидимым, а не удаляем его
+            gameObject.SetActive(false);
+            return true;
         }
+        return false;
+    }
+
+    public bool IsDestroyed()
+    {
+        // Проверяем, был ли корабль уничтожен
+        return health <= 0;
     }
 
     // устанавливаем корабль на случайной свободной позиции на сетке
@@ -145,7 +164,7 @@ public class Ship : MonoBehaviour
 
             Vector2Int position = new Vector2Int(startX + offsetX, startY + offsetY);
             occupiedPositions.Add(position);
-            grid.OccupyPosition(position.x, position.y, true);
+            grid.AddShipFromCell(this, position.x, position.y, true);
             
             // Обновляем ссылку на Cell в соответствующей ShipCell
             ShipCell shipCell = shipCells[i];
@@ -154,7 +173,6 @@ public class Ship : MonoBehaviour
 
             // Добавляем ссылку на корабль в каждую ячейку
             Cell cell = grid.gridArray[position.x, position.y].GetComponent<Cell>();
-            cell.ship.Add(this);
             cell.shipCell = shipCell;
         }
 

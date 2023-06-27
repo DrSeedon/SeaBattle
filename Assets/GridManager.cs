@@ -12,13 +12,11 @@ public class GridManager : MonoBehaviour
     public Cell cellPrefab;
 
     public Cell[,] gridArray; // двумерный массив, представляющий сетку
-    public bool[,] occupied; // массив, представляющий занятые позиции на сетке
 
     // создаем сетку игрового поля
     public void CreateGrid()
     {
         gridArray = new Cell[width, height];
-        occupied = new bool[width, height];
 
         // заполняем сетку пустыми объектами, которые будут отображаться в виде клеток поля
         for (var x = 0; x < width; x++)
@@ -27,7 +25,25 @@ public class GridManager : MonoBehaviour
             Cell cell = Instantiate(cellPrefab, transform);
             cell.name = "Cell [" + x + "," + y + "]";
             cell.transform.localPosition = new Vector3(x * cellSize, 0, y * cellSize);
+            cell.gridRow = x;
+            cell.gridColumn = y;
             gridArray[x, y] = cell;
+        }
+    }
+
+    public void SetCellsActive(bool value)
+    {
+        foreach (Cell cell in gridArray)
+        {
+            cell.isActive = value;
+        }
+    }
+
+    public void ChangeAllCellsMaterial(bool value)
+    {
+        foreach (Cell cell in gridArray)
+        {
+            cell.ChangeOccupied(value);
         }
     }
 
@@ -47,7 +63,7 @@ public class GridManager : MonoBehaviour
 
                 if (posX >= 0 && posX < width && posY >= 0 && posY < height)
                 {
-                    if (occupied[posX, posY])
+                    if (gridArray[posX, posY].IsOccupied)
                         return false;
                 }
             }
@@ -56,30 +72,28 @@ public class GridManager : MonoBehaviour
         return true;
     }
 
-    // перегрузка метода OccupyPosition с тремя параметрами
-    public void OccupyPosition(int x, int y, bool isOccupied)
+    public void AddShipFromCell(Ship ship, int x, int y, bool isAdd)
     {
         // проверяем, не выходит ли позиция за пределы сетки
         if (x < 0 || x >= width || y < 0 || y >= height)
         {
             return;
         }
-        occupied[x, y] = isOccupied;
-        gridArray[x, y].Occupied(isOccupied);
+
+        gridArray[x, y].AddShipToCell(ship, isAdd);
     }
+
     
     // очищаем занятые позиции на сетке
     public void ResetGrid()
     {
-        occupied = new bool[width, height];
-        
         // Сбрасываем ссылки на корабли в ячейках
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                Cell cell = gridArray[x, y].GetComponent<Cell>();
-                cell.ship.Clear();
+                gridArray[x, y].ships.Clear();
+                gridArray[x, y].ChangeOccupied(gridArray[x, y].IsOccupied);
             }
         }
     }
