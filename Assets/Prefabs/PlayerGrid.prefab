@@ -134,7 +134,7 @@ Transform:
   m_Children:
   - {fileID: 5081025597140606757}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5770550435951034468
 MonoBehaviour:
@@ -166,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5081025597140606757
 Transform:
   m_ObjectHideFlags: 0
